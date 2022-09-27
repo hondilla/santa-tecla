@@ -1,0 +1,15 @@
+name: asciidocs
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run the build process with Docker
+        uses: addnab/docker-run-action@v3
+        with:
+            image: asciidoctor/docker-asciidoctor:latest
+            options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
+            run: asciidoctor -r asciidoctor-diagram index.adoc
+      

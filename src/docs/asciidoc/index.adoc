@@ -1,0 +1,18 @@
+= Fundamentos del Software
+Universo Santa Tecla <USantaTecla@gmail.com>
+:toc-title: Índice
+:toc: left
+
+:idprefix:
+:idseparator: -
+:imagesdir: images
+
+image:sintesis.png[]
+
+include::1-por.adoc[]
+include::2-que/0-index.adoc[]
+include::3-para/0-index.adoc[]
+include::4-como/0-index.adoc[]
+include::5-sintesis/0-index.adoc[]
+include::6-bibliografia.adoc[]
+include::7-ponente.adoc[]

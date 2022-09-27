@@ -1,0 +1,105 @@
+== Conceptos Recurrentes
+
+[cols="10,30,60", options="header"]
+|===
+
+a| Concepto Recurrente
+a| Definición
+a| Ejemplos
+
+a| [green]*Modelos* conceptuales y formales
+a| - [green]#Diversas formas de **formalizar**, **caracterizar**, **visualizar** y **pensar una idea o problema**.# 
+a| 
+- _modelos formales en **lógica**,_
+- _teoría de conmutación y teoría de la computación,_ 
+- _**paradigmas** de lenguajes de programación basados ​​en modelos formales,_ 
+- _modelos conceptuales como **tipos** de datos abstractos y modelos de datos semánticos, y_ 
+- _**lenguajes** visuales utilizados para especificar y diseñar sistemas, como el **flujo** de datos y diagramas **entidad-relación**._
+
+a| Niveles de [green]*abstracción*
+a| - [green]#La naturaleza y el uso de la abstracción en la informática; el uso de la abstracción para **gestionar la complejidad**, estructurar sistemas, **ocultar detalles** y capturar **patrones recurrentes**; la capacidad de representar una entidad o sistema mediante abstracciones que tienen diferentes niveles de detalle y especificidad.# 
+a|
+- _niveles de descripción de hardware,_ 
+- _niveles de especificidad dentro de una **jerarquía de objetos**,_ 
+- _la noción de genéricos en lenguajes de programación y_ 
+- _los niveles de detalle proporcionados en la solución de un problema a partir de especificaciones a través del código._
+
+a| [green]*Asociación*
+a| - [green]#Los procesos de hacer una abstracción más concreta al asociarle *propiedades* adicionales.# 
+a|  
+- _asociar (asignar) un **proceso con un procesador**,_ 
+- _asociar un **tipo con un nombre de variable**,_ 
+- _asociar un programa de objeto de biblioteca con una **referencia simbólica a un subprograma**,_ 
+- _instanciar en programación lógica,_ 
+- _asociar un **método con un mensaje** en un lenguaje orientado a objetos,_ 
+- _creando instancias concretas a partir de descripciones abstractas._
+
+a| [green]*Complejidad*
+a| - [green]#Los **efectos del no lineal** aumentan en complejidad a medida que aumenta el tamaño de un problema.# 
+a| 
+- _Este es un factor importante para distinguir y seleccionar métodos que se adapten a diferentes **tamaños de datos, espacios de problemas y tamaños de programas**._ 
+- _En grandes proyectos de programación, es un factor que determina la **organización de un equipo** de implementación._
+
+a| Ordenar en el [green]*espacio*
+a| - [green]#Los conceptos de **localidad y proximidad** en la disciplina de la informática.# 
+a| 
+- _ubicación física, como en las redes o la **memoria**,_ 
+- _ubicación organizacional (por ejemplo, de procesadores, **procesos**, definiciones de **tipo** y **operaciones** asociadas) y_ 
+- _ubicación conceptual (por ejemplo, **alcance**, **acoplamiento** y **cohesión** del software)._
+
+a| Ordenar en el [green]*tiempo*
+a| - [green]#El concepto de tiempo en el orden de los *eventos*.#
+a|
+- _parámetro en modelos formales (por ejemplo, en la lógica temporal),_ 
+- _sincronizar procesos que se extienden por el espacio,_ 
+- _ejecución de **algoritmos**._
+
+a| [green]*Compromisos* y consecuencias
+a| - [green]#El fenómeno de los compromisos en la informática y las consecuencias de dichos compromisos. Los efectos técnicos, económicos, culturales y de otro tipo de seleccionar una alternativa de diseño sobre otra. Los compromisos son un hecho **fundamental de la vida en todos los niveles y en todas las áreas temáticas**.# 
+a|
+- _compromisos de **espacio-tiempo** en el estudio de algoritmos,_
+- _compromisos inherentes a objetivos de diseño en conflicto (por ejemplo, facilidad de **uso versus integridad**, **flexibilidad versus simplicidad**, **bajo costo versus alta confiabilidad**, etc.),_
+- _compromisos de diseño en hardware y_ 
+- _compromisos implícitas en los intentos de optimizar la potencia informática frente a una variedad de limitaciones._
+
+a| [green]*Eficiencia*
+a| - [green]#Medidas de **costo en relación con recursos como espacio, tiempo, dinero y personas**.# 
+a| 
+- _evaluación teórica de la **complejidad espacial y temporal de un algoritmo**,_ 
+- _la viabilidad, la eficiencia con la que se puede lograr un determinado resultado deseable (como la **finalización de un proyecto** o la fabricación de un componente) y_ 
+- _eficiencia de un determinado resultado_
+
+a| [green]*Reutilización*
+a| - [green]#La capacidad de una **técnica, concepto o sistemas** en particular para responder de manera adecuada para ser reutilizada en un **nuevo contexto o situación**.# 
+a|
+- _probabilidad, la reutilización de **bibliotecas** de software y componentes de hardware,_ 
+- _tecnologías que promueven la reutilización de **componentes** de software y_ 
+- _abstracciones de lenguaje que promueven el desarrollo de **módulos** de software reutilizables._
+
+a| Coherencia e integridad [green]*(Eficacia)*
+a| - [green]#Realizaciones concretas de los conceptos de coherencia e integridad en la informática, incluidos conceptos relacionados como **corrección, solidez y fiabilidad**.# 
+a| 
+- _Conjunto de axiomas que sirven como **especificación formal**,_ 
+- _la coherencia de la teoría con los hechos observados y_ 
+- _la coherencia interna de un lenguaje o **diseño de interfaz**,_ 
+- _Comportamiento del componente o del sistema con las especificaciones establecidas._ 
+- _la adecuación de un conjunto dado de axiomas para capturar todos los comportamientos deseados,_ 
+- _la adecuación funcional de los sistemas de software y hardware, y_ 
+- _la capacidad de un sistema para comportarse bien en condiciones de **error** y **situaciones imprevistas**._
+
+a| [green]*Seguridad*
+a| - [green]#La capacidad de los sistemas de software y hardware para responder de manera adecuada y **defenderse de solicitudes inapropiadas e imprevistas**; la capacidad de una instalación de computadora para resistir eventos catastróficos (por ejemplo, desastres naturales e intentos de sabotaje).# 
+a| 
+- _**verificación de tipos** y otros conceptos en lenguajes de programación que brindan protección contra el uso indebido de objetos y funciones de datos,_ 
+- _cifrado de datos, otorgamiento y revocación de privilegios por parte de un **sistema de administración de bases de datos**,_ 
+- _características en las interfaces de usuario que minimizan los errores del usuario, medidas de seguridad física en la computadora_
+
+a| [green]*Evolución*
+a| - [green]#El hecho del cambio y sus implicaciones. El **impacto del cambio en todos los niveles y la resiliencia y adecuación de abstracciones, técnicas y sistemas frente al cambio**.# 
+a| 
+- _modelos formales para representar aspectos de los sistemas que varían con el tiempo, y_ 
+- _capacidad de un **diseño** para resistir las demandas ambientales cambiantes y los requisitos,_ 
+- _herramientas e instalaciones cambiantes para la gestión de la **configuración**._
+
+|===
+

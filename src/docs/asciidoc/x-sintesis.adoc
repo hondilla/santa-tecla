@@ -1,0 +1,118 @@
+1
+Patrón
+Datos
+Información
+Conocimiento
+Sencillez
+Complejidad arbitraria
+Complejidad necesaria
+Software
+Disciplina
+Evolución del Software
+
+
+2
+Unidad
+Compuesto
+Reusabilidad
+Descomposición
+Diseño
+Analisis
+Síntesis
+Orden
+Calidad
+Efectividad
+Eficacia
+Eficiencia
+Compromiso
+Proyecto
+Tiempo
+Coste
+Ámbito
+Calidad del Software
+Crisis del Software
+Complejidad arbitraria
+Complejidad necesaria
+Ingeniería del Software
+Proceso de Desarrollo Software
+Patrón recurrente
+Patrón iterativo
+Patrón recursivo
+Conjuntos
+
+Charles Babbage
+Ada Lovalace
+Alan Turing
+Kent Beck
+Grady Booch
+Ivar Jacobson
+Martin Fowler
+
+3
+Objetos
+Clases
+Clases Abstractas
+Jerarquías de Composición
+Jerarquías de Clasificación
+Composición
+Agregación
+Asociación
+Abstracción
+Encapsulación
+Modularización
+Jerarquización
+Acoplamiento
+Cohesión
+Granularidad
+Mantenibilidad
+Legibilidad
+Flexibilidad
+Fortaleza
+Reusabilidad
+Paradigma Estructurado
+Paradigma Orientado a Procesos
+Paradigma Orientado a Objetos
+Paradigma Declarativo
+Paradigma Funcional
+Requisitos
+Implementación
+Pruebas
+Despliegue
+Gestión
+Ecosistema
+Metodología en Cascada
+Proceso Iterativo
+Manifiesto Ágil
+Extreme Programming
+Proceso Unificado de Rational
+Scrum
+
+
+4
+Dominio
+Modelo
+Vista
+Diagrama
+UML
+Valor
+Entidad
+Identidad
+Igualdad
+Sistema de Información
+Alta
+Baja
+Modificación
+Consulta
+Paradigma
+Secuencia
+Árbol
+Jerarquía
+Grafo
+Ciclo
+Estático
+Dinámico
+Casos de Uso
+Historias de Usuario
+
+
+

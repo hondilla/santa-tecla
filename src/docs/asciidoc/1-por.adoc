@@ -1,0 +1,20 @@
+== *¿Por qué?*
+
+[cols="50,50"]
+|===
+
+.3+a|
+image::curricula.png[]
+
+^a|
+- *ACM/IEEE-CS Joint Curriculum Task Force*
+* *Computing Curricula, 1991* (término inglés)
+** Diseño de Planes de *Estudios Informáticos* (término francés), ... cibernética, autómatas, ..., TIC, ...!!! 
+*** *__Recurrent concepts__*
+
+^a|
+image:acm.png[]
+^a|
+image:ieee.png[]
+
+|===

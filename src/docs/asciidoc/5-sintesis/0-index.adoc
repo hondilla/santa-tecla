@@ -1,0 +1,13 @@
+== *Sintesis*
+
+image:sintesis.png[]
+
+[cols="100%", grid=none, frame=none]
+|=== 
+
+^.^a|
+include::diagramaSintesis.adoc[] 
+
+|===
+
+

@@ -1,0 +1,56 @@
+[plantuml, sintesis, svg]
+....
+skinparam backgroundColor #222222
+skinparam handwritten true
+hide circle
+hide stereotype
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam class {
+    BorderThickness 3
+    BorderColor #DarkGrey
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor #DarkGrey
+}
+
+class Modelo
+class Enlace as "Asociación"
+class Abstraccion
+class Complejidad
+class Orden
+class Espacio
+class Tiempo
+
+class Compromiso
+class Eficacia
+class Eficiencia
+
+Modelo *--> Orden
+Modelo *--> Compromiso
+Modelo *--> Complejidad 
+Modelo -right-> Evolucion
+
+Complejidad --> Orden
+Orden *--> Enlace
+Orden -left-> Espacio
+Orden -right-> Tiempo
+Enlace --> Abstraccion
+
+Compromiso *--> Eficacia
+Compromiso *--> Eficiencia
+Eficiencia <\|-- Reusabilidad
+Eficacia <\|-- Seguridad
+
+....
+

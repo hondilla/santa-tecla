@@ -1,0 +1,21 @@
+== *Bibliografía*
+
+[cols="25,25,25,25",options="header"]
+
+|===
+
+a| Obra, Autor y Edición
+a| Portada
+a| Obra, Autor y Edición
+a| Portada
+
+a|
+a|
+
+a|
+a|
+
+|===
+
+
+

@@ -1,0 +1,72 @@
+== Itinerario
+
+[cols="30,45,25"]
+|===
+
+.7+^.^a|
+include::diagramaDesarrollo.adoc[]
+
+a|
+- [green]*1. Patrones*
+* [green]#Modelos#
+* [green]#Abstracción#
+* [green]#Reusabilidad#
+a|
+- Valores
+- Recursividad
+- UML
+
+a|
+- [green]*2. Concocimiento*
+* [green]#Orden#
+* [green]#Enlace#
+* [green]#Eficacia#
+* [green]#Seguridad#
+* [green]#Evolución#
+a|
+- Lenguajes formales
+- Modelo Orientado a Objetos
+- PlantUML
+
+a|
+- [green]*3. Complejidad*
+* [green]#Complejidad#
+* [green]#Compromisos#
+* [green]#Eficiencia#
+a|
+- Jerarquía
+- Modularidad
+- XML, JSON, YAML
+
+a|
+- [green]*4. Software*
+* Paradigmas del Software
+* Crisis del Software
+* Disciplinas del Software
+a|
+- XPath, XML Schema
+
+a|
+- [green]*5. Disciplinas del Software*
+* Evolución del Software
+* Internet vs _World Wide Web_
+a|
+- SVG
+
+a|
+- [green]*6. Aplicaciones del Software*
+* Programación y Diseño/Análisis
+* Requisitos, Pruebas, Gestión, Despliegue, Entrega
+a|
+- HTML y CSS
+
+a| 
+- [green]*7. Desarrollo del Software*
+* Procesos en Cascada vs Iterativa
+* Procesos Pesados vs Ágiles
+
+a|
+- React y Spring
+
+|===
+

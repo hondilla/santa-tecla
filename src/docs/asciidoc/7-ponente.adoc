@@ -1,0 +1,21 @@
+== Ponente
+
+[cols="30,30,40"]
+|===
+
+a|
+- *__Luis Fernández Muñoz__*
+* _Formador/Consultor_
+* link:https://es.linkedin.com/in/luisfernandezmunyoz[_Linkedin_]
+^.^a|
+image:setillo.jpg[]
+a|
+* _Doctor en Inteligencia Artificial por la UPM_
+* _Ingeniero en Informática por la UMA_
+* _Diplomado en Informática por la UPM_
+* _Profesor Titular de ETSISI de la UPM_
+
+|===
+
+
+

@@ -1,0 +1,44 @@
+[plantuml, desarrollo, svg]
+....
+skinparam backgroundColor #222222
+skinparam handwritten true
+skinparam shadowing false
+skinparam padding 1
+skinparam arrow {
+    Thickness 2
+    Color #DarkGrey
+    FontSize 20
+    FontName courier
+    FontStyle normal
+    FontColor #DarkGrey
+}
+skinparam rectangle {
+    BorderThickness 3
+    BorderColor<<A>> #forestGreen
+    BorderColor<<B>> #Gold
+    BackgroundColor #222222
+    FontSize 20
+    FontName courier
+    FontStyle bold
+    FontColor<<A>> #forestGreen
+    FontColor<<B>> #Gold
+}
+hide stereotype
+
+
+rectangle "7. Desarrollo \ndel Software" as desarrollo <<A>>
+rectangle "6. Aplicaciones \ndel Software" as aplicaciones <<A>>
+rectangle "5. Disciplinas \ndel Software" as disciplinas <<A>>
+rectangle "4. Software" as software <<A>>
+rectangle "3. Complejidad" as complejidad <<B>>
+rectangle "2. Conocimiento" as conocimiento <<B>>
+rectangle "1. Patrones" as patrones <<B>>
+
+desarrollo -down-> aplicaciones
+aplicaciones -down-> disciplinas
+disciplinas -down-> software
+software -down-> complejidad
+complejidad -down-> conocimiento
+conocimiento -down-> patrones
+....
+

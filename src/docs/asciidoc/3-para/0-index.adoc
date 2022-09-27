@@ -1,0 +1,9 @@
+== *¿Para qué?*
+
+[cols="100%", grid=none, frame=none]
+|=== 
+
+^.^a|
+include::diagramaSintesis.adoc[] 
+
+|===
