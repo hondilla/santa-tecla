@@ -14,5 +14,5 @@ jobs:
           options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
           run: asciidoctor -r asciidoctor-diagram index.adoc
       - name: Run the build process with Docker
-        run: ls -la
+        run: ls -la ${{ github.workspace }}/src/docs/asciidoc
       
