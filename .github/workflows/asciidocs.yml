@@ -12,7 +12,11 @@ jobs:
         with:
           image: asciidoctor/docker-asciidoctor:latest
           options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
-          run: asciidoctor -r asciidoctor-diagram index.adoc
+          run: \
+            asciidoctor -r asciidoctor-diagram index.adoc
+            mkdir build
+            mv index.html build/index.html
+            mv images build/images
       - name: Run the build process with Docker
-        run: ls -la ${{ github.workspace }}/src/docs/asciidoc
+        run: ls -la ${{ github.workspace }}/src/docs/asciidoc/build
       
