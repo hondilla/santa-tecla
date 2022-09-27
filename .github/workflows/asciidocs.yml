@@ -17,8 +17,9 @@ jobs:
             mkdir build
             mv index.html build/index.html
             mv images build/images
-      - name: Run the build process with Docker
-        run: ls -la ${{ github.workspace }}/src/docs/asciidoc/build
-
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ${{ github.workspace }}/src/docs/asciidoc/build
 
       
