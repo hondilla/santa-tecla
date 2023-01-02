@@ -33,6 +33,7 @@ jobs:
         run: |
           mkdir -p ${{ github.workspace }}/santa-tecla-publish/${{env.DESTINATION_PATH}}
           cp -r ${{ github.workspace }}/santa-tecla/src/docs/asciidoc/build/* ${{ github.workspace }}/santa-tecla-publish/${{env.DESTINATION_PATH}}
+          rm -rf ${{ github.workspace }}/santa-tecla-publish/.git
       - name: Deploy 🚀
         uses: cpina/github-action-push-to-another-repository@main
         env:
