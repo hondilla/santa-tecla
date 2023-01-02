@@ -38,7 +38,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: ${{ github.workspace }}/santa-tecla-publish
+          source-directory: santa-tecla-publish
           destination-github-username: 'hondilla'
           destination-repository-name: 'santa-tecla-publish'
           user-email: 7813599+hondilla@users.noreply.github.com
