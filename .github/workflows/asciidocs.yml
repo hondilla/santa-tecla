@@ -17,9 +17,9 @@ jobs:
           options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
           run: |
             asciidoctor -r asciidoctor-diagram index.adoc
-            mkdir "build/$DESTINATION_PATH"
-            mv index.html "build/$DESTINATION_PATH/index.html"
-            mv images "build/$DESTINATION_PATH/images"
+            mkdir "build"
+            mv index.html "build/index.html"
+            mv images "build/images"
       - name: Deploy 🚀
         uses: cpina/github-action-push-to-another-repository@main
         env:
