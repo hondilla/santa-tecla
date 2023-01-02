@@ -24,7 +24,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: asciidoctor/docker-asciidoctor:latest
-          options: -v ${{ LOCAL_SOURCE_PATH }}:/documents/
+          options: -v ${{ env.LOCAL_SOURCE_PATH }}:/documents/
           run: |
             asciidoctor -r asciidoctor-diagram index.adoc
             mkdir -p build
@@ -33,7 +33,7 @@ jobs:
       - name: Move build to publish repo
         run: |
           mkdir -p ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
-          cp -r ${{ LOCAL_SOURCE_PATH }}/build/* ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
+          cp -r ${{ env.LOCAL_SOURCE_PATH }}/build/* ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
           rm -rf /.git
       - name: Deploy 🚀
         uses: cpina/github-action-push-to-another-repository@main
