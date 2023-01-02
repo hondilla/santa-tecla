@@ -1,6 +1,9 @@
 name: asciidocs
 on: [push]
 
+env:
+  PATH: 3-publicaciones/USantaTecla/tech-ajax
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,12 +17,18 @@ jobs:
           options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
           run: |
             asciidoctor -r asciidoctor-diagram index.adoc
-            mkdir build
-            mv index.html build/index.html
-            mv images build/images
+            mkdir "build/$PATH"
+            mv index.html "build/$PATH/index.html"
+            mv images "build/$PATH/images"
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          folder: ${{ github.workspace }}/src/docs/asciidoc/build
+          source-directory: ${{ github.workspace }}/src/docs/asciidoc/build
+          destination-github-username: 'hondilla'
+          destination-repository-name: 'santa-tecla-publish'
+          user-email: 7813599+hondilla@users.noreply.github.com
+          target-branch: gh-pages
 
       
