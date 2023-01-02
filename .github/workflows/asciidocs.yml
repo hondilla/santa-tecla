@@ -4,13 +4,15 @@ on: [push]
 env:
   PUBLISH_DOC_FOLDER: 3-publicaciones/USantaTecla/tech-ajax
 
-  LOCAL_REPOSITORY_FOLDER: current
-  LOCAL_SOURCE_PATH: ${{ github.workspace }}/${{ env.LOCAL_REPOSITORY_FOLDER }}/src/docs/asciidoc
-  PUBLISH_REPOSITORY_FOLDER: publish
-  PUBLISH_DOC_PATH: ${{ github.workspace }}/${{ env.PUBLISH_REPOSITORY_FOLDER }}/${{ env.PUBLISH_DOC_FOLDER }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env: 
+      LOCAL_REPOSITORY_FOLDER: current
+      LOCAL_SOURCE_PATH: ${{ github.workspace }}/${{ env.LOCAL_REPOSITORY_FOLDER }}/src/docs/asciidoc
+      PUBLISH_REPOSITORY_FOLDER: publish
+      PUBLISH_DOC_PATH: ${{ github.workspace }}/${{ env.PUBLISH_REPOSITORY_FOLDER }}/${{ env.PUBLISH_DOC_FOLDER }}
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
