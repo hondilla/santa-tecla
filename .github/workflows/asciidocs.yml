@@ -20,7 +20,7 @@ jobs:
             mv index.html build/${{env.DESTINATION_PATH}}/index.html
             mv images build/${{env.DESTINATION_PATH}}/images
       - name: Deploy 🚀
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: PhilGale92/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
