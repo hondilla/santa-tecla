@@ -7,21 +7,18 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-        with:
-          path: santa-tecla
       - name: Getting publishing repo
         uses: actions/checkout@v3
         with:
           repository: hondilla/santa-tecla-publish
           ref: gh-pages
-          path: santa-tecla-publish
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
         env:
           DESTINATION_PATH: 3-publicaciones/USantaTecla/tech-ajax
         with:
           image: asciidoctor/docker-asciidoctor:latest
-          options: -v ${{ github.workspace }}/santa-tecla/src/docs/asciidoc:/documents/
+          options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
           run: |
             asciidoctor -r asciidoctor-diagram index.adoc
             mkdir -p build
@@ -32,7 +29,7 @@ jobs:
           DESTINATION_PATH: 3-publicaciones/USantaTecla/tech-ajax
         run: |
           mkdir -p ${{ github.workspace }}/santa-tecla-publish/${{env.DESTINATION_PATH}}
-          mv -bfv ${{ github.workspace }}/santa-tecla/src/docs/asciidoc/build/* ${{ github.workspace }}/santa-tecla-publish/${{env.DESTINATION_PATH}}
+          mv -bfv ${{ github.workspace }}/src/docs/asciidoc/build/* ${{ github.workspace }}/santa-tecla-publish/${{env.DESTINATION_PATH}}
       # - name: Deploy 🚀
       #   uses: cpina/github-action-push-to-another-repository@main
       #   env:
