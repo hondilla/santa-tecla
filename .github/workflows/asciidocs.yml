@@ -2,7 +2,7 @@ name: asciidocs
 on: [push]
 
 env:
-  PATH: 3-publicaciones/USantaTecla/tech-ajax
+  DESTINATION_PATH: 3-publicaciones/USantaTecla/tech-ajax
 
 jobs:
   deploy:
@@ -17,9 +17,9 @@ jobs:
           options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
           run: |
             asciidoctor -r asciidoctor-diagram index.adoc
-            mkdir "build/$PATH"
-            mv index.html "build/$PATH/index.html"
-            mv images "build/$PATH/images"
+            mkdir "build/$DESTINATION_PATH"
+            mv index.html "build/$DESTINATION_PATH/index.html"
+            mv images "build/$DESTINATION_PATH/images"
       - name: Deploy 🚀
         uses: cpina/github-action-push-to-another-repository@main
         env:
