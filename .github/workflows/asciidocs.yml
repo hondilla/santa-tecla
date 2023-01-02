@@ -7,27 +7,40 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
+          path: santa-tecla
+      - name: Getting publishing repo
+        uses: actions/checkout@v3
+        with:
+          repository: hondilla/santa-tecla-publish
+          ref: gh-pages
+          path: santa-tecla-publish
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
         env:
           DESTINATION_PATH: 3-publicaciones/USantaTecla/tech-ajax
         with:
           image: asciidoctor/docker-asciidoctor:latest
-          options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
+          options: -v ${{ github.workspace }}/santa-tecla/src/docs/asciidoc:/documents/
           run: |
             asciidoctor -r asciidoctor-diagram index.adoc
-            mkdir -p build/${{env.DESTINATION_PATH}}
-            mv index.html build/${{env.DESTINATION_PATH}}/index.html
-            mv images build/${{env.DESTINATION_PATH}}/images
-      - name: Deploy 🚀
-        uses: PhilGale92/github-action-push-to-another-repository@main
+            mkdir -p build
+            mv index.html build/index.html
+            mv images build/images
+      - name: Move build to publish repo
         env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: src/docs/asciidoc/build
-          destination-github-username: 'hondilla'
-          destination-repository-name: 'santa-tecla-publish'
-          user-email: 7813599+hondilla@users.noreply.github.com
-          target-branch: gh-pages
+          DESTINATION_PATH: 3-publicaciones/USantaTecla/tech-ajax
+        run: |
+          mkdir -p ${{ github.workspace }}/santa-tecla-publish/${{env.DESTINATION_PATH}}
+          mv -bfv ${{ github.workspace }}/santa-tecla/src/docs/asciidoc/build/* ${{ github.workspace }}/santa-tecla-publish/${{env.DESTINATION_PATH}}
+      # - name: Deploy 🚀
+      #   uses: cpina/github-action-push-to-another-repository@main
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      #   with:
+      #     source-directory: src/docs/asciidoc/build
+      #     destination-github-username: 'hondilla'
+      #     destination-repository-name: 'santa-tecla-publish'
+      #     user-email: 7813599+hondilla@users.noreply.github.com
+      #     target-branch: gh-pages
 
       
