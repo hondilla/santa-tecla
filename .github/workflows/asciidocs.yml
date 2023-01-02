@@ -2,9 +2,12 @@ name: asciidocs
 on: [push]
 
 env:
+  PUBLISH_DOC_FOLDER: 3-publicaciones/USantaTecla/tech-ajax
+
   LOCAL_REPOSITORY_FOLDER: current
+  LOCAL_SOURCE_PATH: ${{ github.workspace }}/${{ env.LOCAL_REPOSITORY_FOLDER }}/src/docs/asciidoc
   PUBLISH_REPOSITORY_FOLDER: publish
-  DESTINATION_PATH: 3-publicaciones/USantaTecla/tech-ajax
+  PUBLISH_DOC_PATH: ${{ github.workspace }}/${{ env.PUBLISH_REPOSITORY_FOLDER }}/${{ env.PUBLISH_DOC_FOLDER }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -23,7 +26,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: asciidoctor/docker-asciidoctor:latest
-          options: -v ${{ github.workspace }}/${{ env.LOCAL_REPOSITORY_FOLDER }}/src/docs/asciidoc:/documents/
+          options: -v ${{ LOCAL_SOURCE_PATH }}:/documents/
           run: |
             asciidoctor -r asciidoctor-diagram index.adoc
             mkdir -p build
@@ -31,9 +34,9 @@ jobs:
             mv images build/images
       - name: Move build to publish repo
         run: |
-          mkdir -p ${{ github.workspace }}/${{ env.PUBLISH_REPOSITORY_FOLDER }}/${{ env.DESTINATION_PATH }}
-          cp -r ${{ github.workspace }}/${{ env.LOCAL_REPOSITORY_FOLDER }}/src/docs/asciidoc/build/* ${{ github.workspace }}/${{ env.PUBLISH_REPOSITORY_FOLDER }}/${{ env.DESTINATION_PATH }}
-          rm -rf ${{ github.workspace }}/${{ env.PUBLISH_REPOSITORY_FOLDER }}/.git
+          mkdir -p ${{ env.PUBLISH_DOC_PATH }}
+          cp -r ${{ LOCAL_SOURCE_PATH }}/build/* ${{ env.PUBLISH_DOC_PATH }}
+          rm -rf /.git
       - name: Deploy 🚀
         uses: cpina/github-action-push-to-another-repository@main
         env:
