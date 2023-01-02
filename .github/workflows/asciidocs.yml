@@ -1,9 +1,6 @@
 name: asciidocs
 on: [push]
 
-env:
-  DESTINATION_PATH: 3-publicaciones/USantaTecla/tech-ajax
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -12,14 +9,16 @@ jobs:
         uses: actions/checkout@v3
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
+        env:
+          DESTINATION_PATH: 3-publicaciones/USantaTecla/tech-ajax
         with:
           image: asciidoctor/docker-asciidoctor:latest
           options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
           run: |
             asciidoctor -r asciidoctor-diagram index.adoc
-            mkdir -p build/${{ env.DESTINATION_PATH }}
-            mv index.html build/${{ env.DESTINATION_PATH }}/index.html
-            mv images "build/${{ env.DESTINATION_PATH }}/images"
+            mkdir -p build
+            mv index.html build/index.html
+            mv images "build/images"
       - name: Deploy 🚀
         uses: cpina/github-action-push-to-another-repository@main
         env:
