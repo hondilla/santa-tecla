@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir -p ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
           cp -r ${{ env.LOCAL_SOURCE_PATH }}/build/* ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
-          rm -rf /.git
+          rm -rf ${{ env.PUBLISH_DOC_PATH }}/.git
       - name: Deploy 🚀
         uses: cpina/github-action-push-to-another-repository@main
         env:
