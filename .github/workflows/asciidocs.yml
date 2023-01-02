@@ -4,26 +4,22 @@ on: [push]
 env:
   PUBLISH_DOC_FOLDER: 3-publicaciones/USantaTecla/tech-ajax
 
-
+  LOCAL_SOURCE_PATH: ${{ github.workspace }}/current/src/docs/asciidoc
+  PUBLISH_DOC_PATH: ${{ github.workspace }}/publish
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env: 
-      LOCAL_REPOSITORY_FOLDER: current
-      LOCAL_SOURCE_PATH: ${{ github.workspace }}/$LOCAL_REPOSITORY_FOLDER/src/docs/asciidoc
-      PUBLISH_REPOSITORY_FOLDER: publish
-      PUBLISH_DOC_PATH: ${{ github.workspace }}/$PUBLISH_REPOSITORY_FOLDER/$PUBLISH_DOC_FOLDER
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
         with:
-          path: ${{ env.LOCAL_REPOSITORY_FOLDER }}
+          path: current
       - name: Getting publishing repo
         uses: actions/checkout@v3
         with:
           repository: hondilla/santa-tecla-publish
           ref: gh-pages
-          path: ${{ env.PUBLISH_REPOSITORY_FOLDER }}
+          path: publish
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
         with:
@@ -36,15 +32,15 @@ jobs:
             mv images build/images
       - name: Move build to publish repo
         run: |
-          mkdir -p ${{ env.PUBLISH_DOC_PATH }}
-          cp -r ${{ LOCAL_SOURCE_PATH }}/build/* ${{ env.PUBLISH_DOC_PATH }}
+          mkdir -p ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
+          cp -r ${{ LOCAL_SOURCE_PATH }}/build/* ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
           rm -rf /.git
       - name: Deploy 🚀
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: ${{ env.PUBLISH_REPOSITORY_FOLDER }}
+          source-directory: publish
           destination-github-username: 'hondilla'
           destination-repository-name: 'santa-tecla-publish'
           user-email: 7813599+hondilla@users.noreply.github.com
