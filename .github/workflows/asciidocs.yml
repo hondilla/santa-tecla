@@ -9,17 +9,25 @@ jobs:
         uses: actions/checkout@v3
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
+        env:
+          DESTINATION_PATH: 3-publicaciones/USantaTecla/tech-ajax
         with:
           image: asciidoctor/docker-asciidoctor:latest
           options: -v ${{ github.workspace }}/src/docs/asciidoc:/documents/
           run: |
             asciidoctor -r asciidoctor-diagram index.adoc
-            mkdir build
-            mv index.html build/index.html
-            mv images build/images
+            mkdir -p build/${{env.DESTINATION_PATH}}
+            mv index.html build/${{env.DESTINATION_PATH}}/index.html
+            mv images build/${{env.DESTINATION_PATH}}/images
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          folder: ${{ github.workspace }}/src/docs/asciidoc/build
+          source-directory: src/docs/asciidoc/build
+          destination-github-username: 'hondilla'
+          destination-repository-name: 'santa-tecla-publish'
+          user-email: 7813599+hondilla@users.noreply.github.com
+          target-branch: gh-pages
 
       
