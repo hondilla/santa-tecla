@@ -33,8 +33,9 @@ jobs:
       - name: Move build to publish repo
         run: |
           mkdir -p ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
-          cp -r ${{ env.LOCAL_SOURCE_PATH }}/build/* ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
+          rm -rf ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}/*
           rm -rf ${{ env.PUBLISH_DOC_PATH }}/.git
+          cp -r ${{ env.LOCAL_SOURCE_PATH }}/build/* ${{ env.PUBLISH_DOC_PATH }}/${{ env.PUBLISH_DOC_FOLDER }}
       - name: Deploy 🚀
         uses: cpina/github-action-push-to-another-repository@main
         env:
@@ -45,5 +46,3 @@ jobs:
           destination-repository-name: 'santa-tecla-publish'
           user-email: 7813599+hondilla@users.noreply.github.com
           target-branch: gh-pages
-
-      
